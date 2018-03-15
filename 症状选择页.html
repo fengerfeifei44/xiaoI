@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>惠每智能问诊系统</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/public.js"></script>
+
+</head>
+<body>
+<section class="content">
+    <div class="main ">
+        <h2>选择一个症状</h2>
+        <div class="search">
+            <input type="text" placeholder="使用关键字搜索（例如，咳嗽或头痛）">
+            <span onclick=click()>搜索</span>
+            <div class="errortext" style="display: none">未找到匹配的症状。请尝试其他关键词.</div>
+        </div>
+        <ul class="list">
+
+        </ul>
+    </div>
+    <div class="symptom line common">
+        <h3>常见症状</h3>
+       <!-- <div class="flex">
+
+
+            <a href="javascript:alink('17','便秘');">便秘</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('87','耳部疼痛');">耳部疼痛</a>
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('4','恶心');">恶心</a>
+
+
+
+            <a href="javascript:alink('102','发热');">发热</a>
+
+
+
+
+
+            <a href="javascript:alink('2','腹痛');">腹痛</a>
+
+
+
+            <a href="javascript:alink('21','腹泻');">腹泻</a>
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('19','感冒症状');">感冒症状</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('82','呼吸困难');">呼吸困难</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('18','咳嗽');">咳嗽</a>
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('67','口腔问题');">口腔问题</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('108','尿频和夜尿增多');">尿频和夜尿增多</a>
+
+
+
+
+
+            <a href="javascript:alink('109','尿痛');">尿痛</a>
+
+
+
+            <a href="javascript:alink('6','呕吐');">呕吐</a>
+
+
+
+            <a href="javascript:alink('106','排尿困难');">排尿困难</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('136','皮肤问题（除皮疹外）');">皮肤问题（除皮疹外）</a>
+
+
+
+
+
+
+
+            <a href="javascript:alink('142','皮疹');">皮疹</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('156','上肢关节疼痛或肿胀');">上肢关节疼痛或肿胀</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('34','头痛');">头痛</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('27','下肢关节疼痛或肿胀');">下肢关节疼痛或肿胀</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('50','胸痛');">胸痛</a>
+
+
+
+
+
+            <a href="javascript:alink('51','眩晕');">眩晕</a>
+
+
+
+            <a href="javascript:alink('11','血便');">血便</a>
+
+
+
+
+
+            <a href="javascript:alink('105','血尿');">血尿</a>
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('37','眼部问题');">眼部问题</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('23','腰背痛');">腰背痛</a>
+
+
+
+
+
+
+
+
+
+
+
+            <a href="javascript:alink('103','遗尿（尿床）');">遗尿（尿床）</a>
+
+
+
+
+
+
+
+            <a href="javascript:alink('55','意识模糊');">意识模糊</a>
+
+
+
+
+
+
+
+            <a href="javascript:alink('52','晕倒');">晕倒</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>-->
+        <div class="flex">
+            <a href="javascript:;">便秘</a>
+            <a href="javascript:;">耳部疼痛</a>
+            <a href="javascript:;">恶心想吐哈</a>
+            <a href="javascript:;">发热</a>
+            <a href="javascript:;">腹痛腹痛哈哈哈</a>
+            <a href="javascript:;">腹泻</a>
+            <a href="javascript:;">感冒症状</a>
+            <a href="javascript:;">呼吸困难</a>
+        </div>
+    </div>
+    <div class="symptom others">
+        <h3>其他症状</h3>
+        <div class="flex">
+            <a href="javascript:;">皮肤过敏反应</a>
+            <a href="javascript:;">手术或医疗操作前后相关问题（无症状）</a>
+            <a href="javascript:;">耳部疼痛</a>
+            <a href="javascript:;">恶心</a>
+            <a href="javascript:;">发热</a>
+            <a href="javascript:;">腹痛</a>
+            <a href="javascript:;">腹泻</a>
+            <a href="javascript:;">感冒症状</a>
+            <a href="javascript:;">呼吸困难呼吸困难</a>
+            <a href="javascript:;">感冒症状</a>
+            <a href="javascript:;">呼吸困难哈</a>
+            <a href="javascript:;">呼吸困难</a>
+            <a href="javascript:;">呼吸困难呼吸困难</a>
+            <a href="javascript:;">呼吸困难呼吸困难呼吸困难</a>
+            <a href="javascript:;">感冒症状</a>
+            <a href="javascript:;">呼吸困难</a>
+            <a href="javascript:;">呼吸困难</a>
+        </div>
+    </div>
+</section>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+
+    //绑定数据
+   function bind() {
+       var str="";
+       str+=' <li>腰痛<i></i></li>\
+           <li>肩膀痛<i></i></li>\
+           <li>肚子痛<i></i></li>\
+           <li>便秘<i></i></li>\
+           <li>感冒<i></i></li>\
+           <li>发烧<i></i></li>\
+           <li>呼吸困难<i></i></li>\
+           <li>颈椎病<i></i></li>\
+           <li>牙齿痛<i></i></li>'
+       $(".list").html(str);
+   }
+    $.extend($.expr[':'], {
+        'containsi': function(elem, i, match, array) {
+            return (elem.textContent || elem.innerText || '').toLowerCase()
+                    .indexOf((match[3] || "").toLowerCase()) >= 0;
+        }
+    });
+
+   $('.search input').on("input",function() {
+        if ($(this).val().length > 0) {
+            bind();
+            $("ul.list").addClass('on');
+            $(".symptom").hide()
+            //获取所有带关键词的li数组
+            var array= $(".list li").removeClass('on').filter(':containsi("' + $(this).val() + '")').addClass('on');
+            for (var i=0;i<array.length;i++){
+                var val=$(this).val();
+                var text=array[i].innerHTML;
+                //替换关键字
+                text=text.replace(val,function ($0) {
+                    return "<span class='color'>"+$0+"</span>";
+                })
+                //给li赋带关键字颜色的值
+                array[i].innerHTML=text;
+            }
+           //找不到关键字的内容
+            if ($(".list li.on").size() == 0) {
+                var errortext = $(".search .errortext").text();
+                $('ul.list').append('<li class="on">' + errortext + '</li>')
+            }
+
+        } else {
+            $(".symptom").show();
+            $("ul").removeClass('on');
+            $(".list li").removeClass('on');
+
+        }
+    });
+    $(".search span").click(function () {
+        window.location.href="详情页.html"
+    })
+    //判断每个症状的字个数，并决定宽度
+    $(function () {
+        var $a=$(".flex a");
+      $.each($a,function (index,ele) {
+          if (ele.innerHTML.length > 5 && ele.innerHTML.length <= 12) {
+              ele.style.width = 2.91 + "rem";
+          } else if (ele.innerHTML.length > 12){
+              ele.style.width = 6.00 + "rem";
+              ele.style.marginRight = 0
+          }
+      })
+    })
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>惠每智能问诊系统</title>
+    <link rel="stylesheet" href="css/main2.css?v=99">
+    <script src="js/public.js"></script>
+    <style>
+     /*   .answer i.i{
+            display: inline-block;
+            width: 0.11rem;
+            height: 0.29rem;
+            background: url("imgs/i.png") no-repeat center;
+            background-size: 0.11rem 0.29rem;
+        }
+        .answer>p{
+            position: relative;
+        }
+        .answer  i.i{
+            position: absolute;
+
+        }*/
+    </style>
+</head>
+<body>
+<div class="question">
+  <div class="physician ">
+      <p class="clear"><span>问诊编号<br>000000</span>
+      </p>
+      <div>
+          <h2>便秘</h2>
+          <p>*每个问题都会影响问诊结果，请仔细阅读问题及各个答案，并根据实际情况慎重选择</p>
+      </div>
+  </div>
+    <div class="answer">
+        <p><i class="i i_1"></i>他有以下症状吗？<span>(请选择所有符合的选项)</span></p>
+        <div><span><input type="text">周</span>
+            <span><input type="text">天</span></div>
+        <textarea placeholder="请自此输入"></textarea>
+        <p><i class="i i_2"></i> <label class="on"><input type="radio" name="sex">男</label></p>
+
+        <label><input type="radio" name="sex">女</label>
+        <label><input type="checkbox" name="answer">出血</label>
+        <label class="on"><input type="checkbox" name="answer">栗色、暗红色或黑色柏油样便</label>
+        <label class="other"><input type="radio">男生</label>
+        <label class="other"><input type="radio">女生</label>
+        <label class="other"><input type="radio">以上都不是</label>
+    </div>
+    <div class="btn_wrap">
+        <p class="btn">继续</p>
+        <p class="gray">返回</p>
+        <p><img src="imgs/back.png" alt="重新测评"><span>重新测评</span></p>
+    </div>
+</div>
+<script src="js/jquery-1.12.4.js"></script>
+
+
+<script>
+    $('input:checked').next('label').addClass('on');
+    $(document.body).on('click', function(){
+        $('body').find('input[type=radio]').each(function(i){
+            if($(this).prop('checked')){
+                $(this).parent().addClass("on")
+
+            }else{
+                $(this).parent().removeClass("on")
+
+            }
+        });
+
+        $('body').find('input[type=checkbox]').each(function(i){
+            if($(this).prop('checked')){
+                $(this).parent().addClass("on")
+
+            }else{
+                $(this).parent().removeClass("on")
+
+            }
+        });
+        $('input[type=radio]').click(function () {
+            $("input[type=checkbox]").attr("checked",false)
+        })
+        $('input[type=checkbox]').click(function () {
+            $("input[type=radio]").attr("checked",false)
+        })
+
+    });
+</script>
+
+</body>
+</html>
