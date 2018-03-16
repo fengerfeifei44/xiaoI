@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>惠每智能问诊系统</title>
+    <link rel="stylesheet" href="css/main2.css?v=99">
+    <script src="js/public.js"></script>
+    <style>
+     /*   .answer i.i{
+            display: inline-block;
+            width: 0.11rem;
+            height: 0.29rem;
+            background: url("imgs/i.png") no-repeat center;
+            background-size: 0.11rem 0.29rem;
+        }
+        .answer>p{
+            position: relative;
+        }
+        .answer  i.i{
+            position: absolute;
+
+        }*/
+    </style>
+</head>
+<body>
+<div id="mask_i"></div>
+<div class="question">
+
+  <div class="physician ">
+      <p class="clear"><span>问诊编号<br>000000</span>
+      </p>
+      <div>
+          <h2>便秘</h2>
+          <p>*每个问题都会影响问诊结果，请仔细阅读问题及各个答案，并根据实际情况慎重选择</p>
+      </div>
+  </div>
+    <div class="answer">
+
+        <p class="pro clear"><i class="i i_1"></i><span class="pro_font">他有以下症状吗？出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span><span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span></p>
+
+
+        <label><input type="checkbox" name="answer">出血</label>
+
+        <!--  <p class="wrap_i">
+              <i class="i i_2"></i>
+              <span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span>
+          </p>-->
+        <label class="on"><input type="checkbox" name="answer">栗色、暗红色或黑色柏油样便</label>
+
+        <!-- <p class="wrap_i">
+             <i class="i i_2"></i>
+             <span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span>
+         </p>-->
+        <label class="other"><input type="radio">以上都不是</label>
+    </div>
+    <div class="btn_wrap">
+        <p class="btn">继续</p>
+        <p class="gray">返回</p>
+        <p><img src="imgs/back.png" alt="重新测评"><span>重新测评</span></p>
+    </div>
+</div>
+
+<script src="js/jquery-1.12.4.js"></script>
+
+
+<script>
+    //点击单选多选效果
+    $('input:checked').next('label').addClass('on');
+    $(document.body).on('click', function(){
+        $('body').find('input[type=radio]').each(function(i){
+            if($(this).prop('checked')){
+                $(this).parent().addClass("on")
+
+            }else{
+                $(this).parent().removeClass("on")
+
+            }
+        });
+
+        $('body').find('input[type=checkbox]').each(function(i){
+            if($(this).prop('checked')){
+                $(this).parent().addClass("on")
+
+            }else{
+                $(this).parent().removeClass("on")
+
+            }
+        });
+        $('input[type=radio]').click(function () {
+            $("input[type=checkbox]").attr("checked",false)
+        })
+        $('input[type=checkbox]').click(function () {
+            $("input[type=radio]").attr("checked",false)
+        })
+
+    });
+    //点击小i
+    $('.answer>p>i').click(function () {
+          $("#mask_i").show();
+          $(this).siblings(".content_i").show();
+    })
+    $('#mask_i').click(function () {
+        $(this).hide();
+        $(".content_i").hide();
+    })
+    //判断页面有没有小i
+    $(function () {
+        if($(".answer>p").hasClass("wrap_i")){
+            $(".answer label").css("marginLeft","0.7rem");
+            $(".btn_wrap").css("marginLeft","0.7rem");
+        }
+    })
+    $(function () {
+        if($(".answer>.pro>i").hasClass("i_1")){
+            console.log(1)
+            $(".answer .pro_font").css("width","88%");
+
+        }
+    })
+</script>
+
+</body>
+</html>
