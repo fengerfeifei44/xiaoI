@@ -37,15 +37,24 @@
   </div>
     <div class="answer">
 
-        <p class="pro"><i class="i i_1"></i>他有以下症状吗？<span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span></p>
+        <p class="pro clear"><i class="i i_1"></i><span class="pro_font">他有以下症状吗？出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span><span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span></p>
 
-        <p class="wrap_i"><i class="i i_2"></i><span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span><!-- <label class="on"><input type="radio" name="sex">男</label></p>
-
-        <p class="wrap_i"><label><input type="radio" name="sex">女</label></p>-->
+        <p class="wrap_i">
+            <i class="i i_2"></i>
+            <span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span>
+        </p>
         <label><input type="checkbox" name="answer">出血</label>
+
+        <!--  <p class="wrap_i">
+              <i class="i i_2"></i>
+              <span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span>
+          </p>-->
         <label class="on"><input type="checkbox" name="answer">栗色、暗红色或黑色柏油样便</label>
-       <!-- <label class="other"><input type="radio">男生</label>
-        <label class="other"><input type="radio">女生</label>-->
+
+        <!-- <p class="wrap_i">
+             <i class="i i_2"></i>
+             <span class="content_i">出现这类症状，通常建议拨打120或寻求急诊治疗。如有信息图标，请在选择前阅读该提示信息。</span>
+         </p>-->
         <label class="other"><input type="radio">以上都不是</label>
     </div>
     <div class="btn_wrap">
@@ -98,8 +107,19 @@
         $(this).hide();
         $(".content_i").hide();
     })
-    $(".btn").click(function () {
-        window.location.href="小i1.html"
+    //判断页面有没有小i
+    $(function () {
+        if($(".answer>p").hasClass("wrap_i")){
+            $(".answer label").css("marginLeft","0.7rem");
+            $(".btn_wrap").css("marginLeft","0.7rem");
+        }
+    })
+    $(function () {
+        if($(".answer>.pro>i").hasClass("i_1")){
+            console.log(1)
+            $(".answer .pro_font").css("width","88%");
+
+        }
     })
 </script>
 
